@@ -10,4 +10,4 @@
 		<select id="memberList" resultType="memb">
 		SELECT mid,name,age,address FROM member;
 	</select>
-</mapper> 
+</mapper>       
