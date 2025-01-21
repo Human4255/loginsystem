@@ -1,3 +1,4 @@
+<!--클라이언트-->
 <!doctype html>
 <html>
 	<head>
@@ -10,16 +11,25 @@
         <p>사용언어 : JAVA, Servlet, html, javascript, css, mybatis, mariadb</p>
         <p>사용통합툴 : eclipse spring suite 4, VSC </p>
         <div id="container">
-            <div class="sp" style="float:left">
-                <p><label>아 이 디</label><input type="text" /></p>
-                <p><label>비밀번호</label><input type="password" /></p>
-            </div>
-            <div style="float:left;margin-top:1rem;margin-left:1rem">
-                <button style="width:6rem;height:3.8rem">로그인</button>
-            </div>
-            <p  class="sp" style="text-align:right;clear: both;"> 
-				<a href="singnup.html">회원가입</a> <a href="#">회원리스트보기</a></p>
+			<div id="signinContain">
+            	<div class="sp" style="float:left">
+                	<p><label>아 이 디</label><input type="text" id="mid" /></p>
+                	<p><label>비밀번호</label><input type="password" id="mpw"/></p>
+            	</div>
+            	<div style="float:left;margin-top:1rem;margin-left:1rem">
+                	<button id="signin" style="width:6rem;height:3.8rem">로그인</button>
+            	</div>
+				</div>
+            	<p  class="sp" style="text-align:right;clear: both;"> 
+					<a id="memcontrol" href="singnup.html">회원가입</a> &nbsp;&nbsp;&nbsp;&nbsp;<a style="display:none" id="listview" href="#">회원리스트보기</a></p>
         </div>
+		<div id="listContain" style="display: none;">
+			<hr>
+				<p>회언 리스트 인원:<span id="mcnt"></span></p>
+				<div id="list"></div>
+			</hr>
+			
+		</div>
     </body>
 	<script>
 		let colors = ["tomato","MediumSeaGreen","Aqua","orange","gray","Beige","DarkOrchid","DarkKhaki"];
@@ -27,6 +37,51 @@
         $(function(){
             $("body").css("background-color",colors[r]);
         })
+		$("#signin").on("click",async()=>{
+			const logindata = {mid:$("#mid").val(),mpw:$("#mpw").val()}
+			//json은 따로 헤더값을 줘야함 --> "content-type":"application/json" -규정되어있음
+			const ctype = "application/json"
+			const res = await fetch("/member/login",{method:"post",headers:{"content-type":ctype},body:JSON.stringify(logindata)})
+			const data = await res.json();
+			console.log(data)
+			if(data.message=="로그인성공"){
+				$("#signinContain").html(`
+					${data.member.mid}(${data.member.name})님 로그인 하신걸 환영합니다.
+				`);
+				$("#listview").css("display","inline");
+				$("#memcontrol").attr("href","/member/logout").text("로그아웃") //체이닝 /setter
+			}else{
+				alert(data.message);
+			}
+		})
+		$("#listview").click(async ()=>{
+			const res = await fetch("/member/listview",{headers:{method:"get"}})
+			const data = await res.json();
+			console.log(data)
+			if(data.message=="리스트수신"){
+				console.log(data.members);
+				$("#mcnt").text(data.members.length);
+				const viewText = data.members.map(
+					(obj)=>`<p style="border:1px solid gray;background:black;color:white">아이디:${obj.mid} 이름:${obj.name} 
+						나이:${obj.age} 주소:${obj.address}</p>`)
+				console.log(viewText)
+				$("#listindex").html(viewText.join(""));
+				$("#listContain").css("display","block")
+						
+			}else{
+				alert(data.message);
+			}
+		})
+		$("a").click(async function(evt){
+			if($(this).text()=="로그아웃"){
+				evt.preventDefault();
+				const res = await fetch($(this).attr("href")) //getter
+				const data = await res.json();
+				alert(data.message)
+				location.href="/";
+				return false;	
+			}
+		})
 	</script>
 	<style>
 		#container{padding:0.5rem;width:25rem;height:8rem;}

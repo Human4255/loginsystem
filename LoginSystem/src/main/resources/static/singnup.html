@@ -82,8 +82,14 @@
 	<script>
 		$("#memform").on("submit",async(evt)=>{ //async:비동기 sync:동기
 			evt.preventDefault(); //기본이벤트제거
-			const payload = new FormData($("#memform")[0]) //ui폼데이터 수집
+			let payload = new FormData($("#memform")[0]) //ui폼데이터 수집
 			console.log(payload)
+			for(let key of payload.keys()){
+				console.log(key,":",payload.get(key));
+			}
+			if(!payload.get("age")){
+				payload.set("age",100);
+			}
 			//서버로의 데이터 전송
 			const res = await fetch("/member/signup",{method:"post",body:payload});
 			//promise 대기-서버응답시까지

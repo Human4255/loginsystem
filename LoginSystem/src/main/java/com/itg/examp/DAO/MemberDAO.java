@@ -14,4 +14,3 @@ public interface MemberDAO {
 	public List<MemberDTO> memberList();
 
 }
- 
