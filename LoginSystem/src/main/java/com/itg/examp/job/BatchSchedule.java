@@ -17,7 +17,7 @@ public class BatchSchedule {
 	private final Job job=null;
 	@Autowired
 	private final JobLauncher jobLauncher= null;
-	@Scheduled(cron="0/10 * * * * ?")//스케쥴 실행 어노테이션
+	@Scheduled(cron="0 0/1 * * * ?")//스케쥴 실행 어노테이션
 	public void runJob() {
 		System.out.println("스케줄실행 ==== "); 
 		try {
