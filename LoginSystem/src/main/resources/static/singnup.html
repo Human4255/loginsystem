@@ -94,12 +94,12 @@
 			const res = await fetch("/member/signup",{method:"post",body:payload});
 			//promise 대기-서버응답시까지
 			const data = await res.json(); //서버 응답시 json데이터로 수신
-			console.log(data)
-			if (data.message="회원가입성공"){
+			console.log(data.message)
+			if (data.message=="회원가입성공"){
 				alert("회원가입이 성공하였습니다. 다시 로그인해주세요.")
 				location.href="/"
 			}else{
-				alert("회원가입실패 가입정보를 다시 확인해주세요")
+				alert(data.message)
 			}
 			return false;
 		})

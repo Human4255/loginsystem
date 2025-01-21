@@ -26,7 +26,7 @@
 		<div id="listContain" style="display: none;">
 			<hr>
 				<p>회언 리스트 인원:<span id="mcnt"></span></p>
-				<div id="list"></div>
+				<div id="listindex"></div>
 			</hr>
 			
 		</div>
@@ -75,11 +75,11 @@
 		$("a").click(async function(evt){
 			if($(this).text()=="로그아웃"){
 				evt.preventDefault();
-				const res = await fetch($(this).attr("href")) //getter
+				const res = await fetch($(this).attr("href"))
 				const data = await res.json();
 				alert(data.message)
 				location.href="/";
-				return false;	
+				return false;
 			}
 		})
 	</script>
