@@ -5,6 +5,7 @@
 		<title>정보처리기사 로그인시스템 구현하기</title>
 		<meta charset="utf-8">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script href="common.js"></script>
 	</head>
     <body>
         <h2 style="text-align: center;">정보처리기사 WAS 로그인 시스템 구현</h2>
@@ -38,19 +39,19 @@
         $(function(){
             $("body").css("background-color",colors[r]);
         })
-		//공통모듈 분리대상
+		//공통모듈 분리대상		
 		$("#signin").on("click",async()=>{
-			let data = await login($("#mid").val(),$("#mpw").val())
-			if(data.message=="로그인성공"){
-				$("#signinContain").html(`
-					${data.member.mid}(${data.member.name})님 로그인 하신걸 환영합니다.
-				`);
-				$("#listview").css("display","inline");
-				logout($("#memcontrol"))
-			}else{
-				alert(data.message);
-			}
-		})
+				let data = await login($("#mid").val(),$("#mpw").val())			
+				if(data.message=="로그인성공"){
+					$("#signinContain").html(`
+						${data.member.mid}(${data.member.name}) 님 로그인 하신걸 환영합니다.
+					`);
+					$("#listview").css("display","inline");
+					await logout($("#memcontrol"))				
+				}else{
+					alert(data.message);
+				}	
+			})	
 		$("#listview").click(async ()=>{
 			const res = await fetch("/member/listview",{headers:{method:"get"}})
 			const data = await res.json();

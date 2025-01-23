@@ -1,29 +1,32 @@
 <!doctype html>
 <html>
 	<head>
-		<title>정보처리기사 로그인시스템 구현하기</title>
-		<meta charset="utf-8">
+		<title>정보처리기사_로그인시스템구현하기</title>
+		<meta charset="utf-8"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="common.js" ></script>
 	</head>
-    <body>
+	<body>
 		<h1> 공통모듈 작동 페이지 </h1>
 		<div id="uicontainer">
-			<label>아 이 디<input type="text" id="myid"/ ></label>
-			<label>비밀번호<input type="password" id="mypw" / ></label>
-			<button>로그인</button>
+			<label>아 이 디<input type="text" id="myid"/></label>	
+			<label>비밀번호<input type="password" id="mypw"/></label>
+			<button id="signin">로그인</button>
 		</div>
 		<a href="#" id="logoutContainer"></a>
 	</body>
 	<script>
-		$("#signin").click(async()=>{
+		$("#signin").click(async ()=>{
 			const data = await login($("#myid").val(),$("#mypw").val());
+			console.log(data)
 			if(data.message=="로그인성공"){
-				$("#uicontainer").text(`${data.member.mid}(${data.member.name})님 로그인 하신걸 환영합니다.`)
-				logout($("#logoutContainer"))
+				$("#uicontainer").text(`${data.member.mid}(${data.member.name}) 
+												님 로그인 하신걸 환영합니다.`)
+				logout($("#logoutContainer"))				
 			}else{
-				alert("아이디와 비밀번호를 다시 확인해주세요")
+				alert("아이디와 비밀번호를 다시 확인해 주세요")
 			}
-		})
+		})			
 		
 	</script>
 </html>
