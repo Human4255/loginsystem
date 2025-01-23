@@ -30,9 +30,9 @@ d1.set_img(0,{imgtitle:"요구사항명세서작성",imgurl:"https://drive.googl
 
 
 d1.set_content("목표 시스템 개발을 위한 적정한 언어를 선정하고 라이선스와 향후 지원사항을 참고하여 결정한다.")
-d1.set_img(1,{imgtitle:"개발언어선정",imgurl:"https://drive.google.com/file/d/15GgAeFgW1Cxctk9PbJagUNfG2UkEU4WS/view?usp=drive_link",imglog:"자바언어기반 스프링프레임워크, html5, memberData file",sourceurl:"https://docs.google.com/document/d/1UvD1fZNL9yjLORwxgAW5vD6C-A_RwL1zcNan9RZqmys/edit?usp=drive_link"})//이미지타이틀
-d1.set_img(1,{imgtitle:"스프링프레임워크",imgurl:"https://drive.google.com/file/d/1HRUQhj2Tk6AzIW_NSRD59wGUAduJYTmW/view?usp=drive_link",imglog:"오픈소스 스프링프레임워크 v4.221",sourceurl:""})//이미지타이틀
-
+d1.set_img(1,{imgtitle:"개발언어선정",imgurl:"https://drive.google.com/file/d/1z4mFDvovnvQnXVqeEbAWOa-ja-JU2dJz/view?usp=drive_link",imglog:"자바언어기반 스프링프레임워크, html5, memberData file",sourceurl:"https://docs.google.com/document/d/1BKwroidze5UCn-ou01jyU_de8V2fvyDsgBSCfHY4KZE/edit?usp=drive_link"})//이미지타이틀
+d1.set_img(1,{imgtitle:"클라이언트 개발언어",imgurl:"https://drive.google.com/file/d/1GWZaucsIKEO962jIj0BVQ1syBfk2QUG1/view?usp=drive_link",imglog:"작성문서_html5,css,javascript",sourceurl:""})//이미지타이틀
+d1.set_img(1,{imgtitle:"데이터베이스세팅",imgurl:"https://drive.google.com/file/d/1z26KQSTE7Y7ObTzmmaPKtpuAevO-8cV0/view?usp=drive_link",imglog:"마리아DB설정 및 데이베이스생성",sourceurl:""})
 
 d1.set_content("코딩개발도구와 테스트 및 빌드, 패키징, 배포등 개발 전반에 대한 필요한 환경을 설정한다.")
 d1.set_img(2,{imgtitle:"개발환경 구축 명세",imgurl:"https://drive.google.com/file/d/1mw6ZBtTbbZQYlfz1YQXCuTfoi-hnvfpg/view?usp=drive_link",imglog:"운영체제 및 개발에 필요한 환경을 고려하여 개발도구, 테스트도구, 빌드도구, 패키징도구, 형상관리도구등을 결정",sourceurl:"https://docs.google.com/document/d/1rNVbHnhYGoozaqX_RsD3cErmKYzGUMvba9ihxbP2CKk/edit?usp=drive_link"})//이미지타이틀

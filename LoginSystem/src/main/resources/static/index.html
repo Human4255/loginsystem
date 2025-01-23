@@ -23,6 +23,7 @@
             	<p  class="sp" style="text-align:right;clear: both;"> 
 					<a id="memcontrol" href="singnup.html">회원가입</a> &nbsp;&nbsp;&nbsp;&nbsp;<a style="display:none" id="listview" href="#">회원리스트보기</a></p>
         </div>
+		<a href="newpage.html">분리된 공통모듈 테스트</a>
 		<div id="listContain" style="display: none;">
 			<hr>
 				<p>회언 리스트 인원:<span id="mcnt"></span></p>
@@ -37,19 +38,15 @@
         $(function(){
             $("body").css("background-color",colors[r]);
         })
+		//공통모듈 분리대상
 		$("#signin").on("click",async()=>{
-			const logindata = {mid:$("#mid").val(),mpw:$("#mpw").val()}
-			//json은 따로 헤더값을 줘야함 --> "content-type":"application/json" -규정되어있음
-			const ctype = "application/json"
-			const res = await fetch("/member/login",{method:"post",headers:{"content-type":ctype},body:JSON.stringify(logindata)})
-			const data = await res.json();
-			console.log(data)
+			let data = await login($("#mid").val(),$("#mpw").val())
 			if(data.message=="로그인성공"){
 				$("#signinContain").html(`
 					${data.member.mid}(${data.member.name})님 로그인 하신걸 환영합니다.
 				`);
 				$("#listview").css("display","inline");
-				$("#memcontrol").attr("href","/member/logout").text("로그아웃") //체이닝 /setter
+				logout($("#memcontrol"))
 			}else{
 				alert(data.message);
 			}
