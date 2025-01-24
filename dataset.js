@@ -48,10 +48,12 @@ data_sets.push(d1)
 let d2 = new DataSet("공통모듈구현")//메인타이틀
 d2.set_content("공통모듈구현을 작성합니다.")//서브 타이틀
 d2.set_img(0,{imgtitle:"공통모듈구현을 위한 파일생성",imgurl:"https://drive.google.com/file/d/1EYb6PrdWkTxfPPKB8KjUJ7xbZevExASu/view?usp=drive_link",imglog:"common.js파일을 생성하여 공통모듈(로그아웃,로그인)을 이곳에 구현하였다. 함수만 호출하면 어디에서든 로그인,로그아웃 기능을 사용할 수 있다. ",sourceurl:"https://docs.google.com/document/d/18yo1TRTYfw4Drvh53a1N_uzvgxQvWYf1O2lY5I8hwWc/edit?usp=drive_link"})//이미지타이틀
+d2.set_img(0,{imgtitle:"공통모듈 테스트 할 웹페이지 생성",imgurl:"https://drive.google.com/file/d/1w9_SaZbvfEK4WTHGoJ_pU0bO12u2b1RH/view?usp=drive_link",imglog:"newpage.html파일을 생성하여 함수가 잘 호출되고 작동하는지 테스트해본다.",sourceurl:""})//이미지타이틀
+d2.set_img(0,{imgtitle:"로그인 로그아웃 테스트",imgurl:"https://drive.google.com/file/d/1m_FIUMfgGqyKCCfR28Hz5P-YkTGgT6EH/view?usp=drive_link",imglog:"공통모듈을 사용해 로그인, 로그아웃 동작 확인 ",sourceurl:""})//이미지타이틀
 d2.set_content("테스트케이스를 작성합니다.")
-d2.set_img(1,{imgtitle:"구현한 공통모듈 작동확인",imgurl:"https://drive.google.com/file/d/1EYb6PrdWkTxfPPKB8KjUJ7xbZevExASu/view?usp=drive_link",imglog:"common.js파일을 생성하여 공통모듈(로그아웃,로그인)을 이곳에 구현하였다. 함수만 호출하면 어디에서든 로그인,로그아웃 기능을 사용할 수 있다. ",sourceurl:""})//이미지타이틀
+d2.set_img(1,{imgtitle:"구현한 공통모듈 작동확인",imgurl:"",imglog:"common.js파일을 생성하여 공통모듈(로그아웃,로그인)을 이곳에 구현하였다. 함수만 호출하면 어디에서든 로그인,로그아웃 기능을 사용할 수 있다. ",sourceurl:"https://docs.google.com/document/d/18yo1TRTYfw4Drvh53a1N_uzvgxQvWYf1O2lY5I8hwWc/edit?usp=drive_link"})//이미지타이틀
 d2.set_content("단위테스트를 작성합니다.")
-d2.set_img(2,{imgtitle:"공통모듈구현하기",imgurl:"https://drive.google.com/file/d/1EYb6PrdWkTxfPPKB8KjUJ7xbZevExASu/view?usp=drive_link",imglog:"common.js파일을 생성하여 공통모듈(로그아웃,로그인)을 이곳에 구현하였다. 함수만 호출하면 어디에서든 로그인,로그아웃 기능을 사용할 수 있다. ",sourceurl:""})//이미지타이틀
+d2.set_img(2,{imgtitle:"공통모듈구현하기",imgurl:"",imglog:"common.js파일을 생성하여 공통모듈(로그아웃,로그인)을 이곳에 구현하였다. 함수만 호출하면 어디에서든 로그인,로그아웃 기능을 사용할 수 있다. ",sourceurl:""})//이미지타이틀
 
 d2.set_fill("사용자와 프로그램간에 인터렉티브한 로그인 세션 설정")//사용자 에필로그
 data_sets.push(d2)
