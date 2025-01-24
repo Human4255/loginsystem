@@ -1,3 +1,4 @@
+//commom.js 
 async function login(mid,mpw){//로그인 함수 분리
 	const logindata = {mid,mpw}
 	const ctype = "application/json"
@@ -18,7 +19,6 @@ function logout(logoutui){//로그아웃 함수분리
 				}
 	})
 }
-
 
 
 

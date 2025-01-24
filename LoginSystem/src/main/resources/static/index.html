@@ -2,56 +2,57 @@
 <!doctype html>
 <html>
 	<head>
-		<title>정보처리기사 로그인시스템 구현하기</title>
-		<meta charset="utf-8">
+		<title>정보처리기사_로그인시스템구현하기</title>
+		<meta charset="utf-8"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-		<script href="common.js"></script>
+		<script src="common.js" ></script>
 	</head>
-    <body>
-        <h2 style="text-align: center;">정보처리기사 WAS 로그인 시스템 구현</h2>
-        <p>사용언어 : JAVA, Servlet, html, javascript, css, mybatis, mariadb</p>
-        <p>사용통합툴 : eclipse spring suite 4, VSC </p>
-        <div id="container">
+	<body>
+	
+		
+		<h2 style="text-align: center;">정보처리기사 WAS 로그인 시스템 구현</h2>
+		<p>사용언어 : JAVA, Servlet, html, javascript, css, mybatis, mariadb</p>
+		<p>사용통합툴 : eclipse spring suite 4, VSC </p>
+		<div id="container">
 			<div id="signinContain">
-            	<div class="sp" style="float:left">
-                	<p><label>아 이 디</label><input type="text" id="mid" /></p>
-                	<p><label>비밀번호</label><input type="password" id="mpw"/></p>
-            	</div>
-            	<div style="float:left;margin-top:1rem;margin-left:1rem">
-                	<button id="signin" style="width:6rem;height:3.8rem">로그인</button>
-            	</div>
+				<div class="sp" style="float:left">
+					<p><label>아 이 디</label><input type="text" id="mid"/></p>
+					<p><label>비밀번호</label><input type="password" id="mpw"/></p>
 				</div>
-            	<p  class="sp" style="text-align:right;clear: both;"> 
-					<a id="memcontrol" href="singnup.html">회원가입</a> &nbsp;&nbsp;&nbsp;&nbsp;<a style="display:none" id="listview" href="#">회원리스트보기</a></p>
-        </div>
+				<div style="float:left;margin-top:1rem;margin-left:1rem">
+					<button id="signin" style="width:6rem;height:3.8rem">로그인</button>
+				</div>
+			</div>
+			<p  class="sp" style="text-align:right;clear: both;"> <a id="memcontrol" href="singnup.html">회원가입</a> &nbsp;&nbsp;&nbsp; <a style="display:none" id="listview" href="#">회원리스트보기</a></p>
+		</div>
 		<a href="newpage.html">분리된 공통모듈 테스트</a>
 		<div id="listContain" style="display: none;">
 			<hr>
-				<p>회언 리스트 인원:<span id="mcnt"></span></p>
-				<div id="listindex"></div>
-			</hr>
+			<p>회원 리스트 인원:<span id="mcnt"></span></p>
+			<div id="listindex"></div>
 			
 		</div>
-    </body>
+	</body>
 	<script>
-		let colors = ["tomato","MediumSeaGreen","Aqua","orange","gray","Beige","DarkOrchid","DarkKhaki"];
-        let r = parseInt(Math.random()*8);
-        $(function(){
-            $("body").css("background-color",colors[r]);
-        })
+		let colors = ["red","green","blue","orange",
+			"gray","Beige","BlueViolet","DarkKhaki"];
+		let r = parseInt(Math.random()*8);
+		$(function(){
+		$("body").css("background-color",colors[r])
+		})
 		//공통모듈 분리대상		
 		$("#signin").on("click",async()=>{
-				let data = await login($("#mid").val(),$("#mpw").val())			
-				if(data.message=="로그인성공"){
-					$("#signinContain").html(`
-						${data.member.mid}(${data.member.name}) 님 로그인 하신걸 환영합니다.
-					`);
-					$("#listview").css("display","inline");
-					await logout($("#memcontrol"))				
-				}else{
-					alert(data.message);
-				}	
-			})	
+			let data = await login($("#mid").val(),$("#mpw").val())			
+			if(data.message=="로그인성공"){
+				$("#signinContain").html(`
+					${data.member.mid}(${data.member.name}) 님 로그인 하신걸 환영합니다.
+				`);
+				$("#listview").css("display","inline");
+				await logout($("#memcontrol"))				
+			}else{
+				alert(data.message);
+			}	
+		})	
 		$("#listview").click(async ()=>{
 			const res = await fetch("/member/listview",{headers:{method:"get"}})
 			const data = await res.json();
@@ -70,20 +71,11 @@
 				alert(data.message);
 			}
 		})
-		$("a").click(async function(evt){
-			if($(this).text()=="로그아웃"){
-				evt.preventDefault();
-				const res = await fetch($(this).attr("href"))
-				const data = await res.json();
-				alert(data.message)
-				location.href="/";
-				return false;
-			}
-		})
+		
 	</script>
 	<style>
 		#container{padding:0.5rem;width:25rem;height:8rem;}
 		p{margin-bottom:0.5rem}
-		label{display:inline-block;width:6rem;}
+		label{display:inline-block;width:6rem}
 	</style>
 </html>
