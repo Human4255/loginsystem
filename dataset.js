@@ -38,7 +38,7 @@ d1.set_content("코딩개발도구와 테스트 및 빌드, 패키징, 배포등
 d1.set_img(2,{imgtitle:"개발환경 구축 명세",imgurl:"https://drive.google.com/file/d/1Gll6QttUHKmhFUiOl_U5IpEBosmC0kCX/view?usp=drive_link",imglog:"운영체제 및 개발에 필요한 환경을 고려하여 개발도구, 테스트도구, 빌드도구, 패키징도구, 형상관리도구등을 결정",sourceurl:"https://docs.google.com/document/d/1rNVbHnhYGoozaqX_RsD3cErmKYzGUMvba9ihxbP2CKk/edit?usp=drive_link"})//이미지타이틀
 d1.set_img(2,{imgtitle:"개발도구 모음",imgurl:"https://drive.google.com/file/d/1WUGAYWtoG_xuOQTKqMuP97oKoAWUeoHz/view?usp=drive_link",imglog:"서버 개발을 효율적으로 하고자 도구를 모아둠",sourceurl:""})//이미지타이틀
 d1.set_img(2,{imgtitle:"개발도구 Spring for Eclipse",imgurl:"https://drive.google.com/file/d/1vl3Ridea05eDn3Hx0cfIWzgkPi-vQX31/view?usp=drive_link",imglog:"자바 스프링 서버단 개발을 위한 도구",sourceurl:""})//이미지타이틀
-d1.set_img(2,{imgtitle:"빌드도구 gradle",imgurl:"https://drive.google.com/file/d/1vlxyuzBmzaBk7B9VoycUH0mRBBxe4nTr/view?usp=drive_link",imglog:"프로그램 빌드 및 외부 라이브러리 디펜더시를 위한 도구",sourceurl:""})//이미지타이틀
+d1.set_img(2,{imgtitle:"빌드도구 gradle",imgurl:"https://drive.google.com/file/d/1oec5idqvrWVFpp4ysu8hUn8uxCleK3t9/view?usp=drive_link",imglog:"프로그램 빌드 및 외부 라이브러리 디펜더시를 위한 도구",sourceurl:""})//이미지타이틀
 d1.set_img(2,{imgtitle:"형상관리도구 git",imgurl:"https://drive.google.com/file/d/1XrUo9XG8NQySh6ljHQ4ECJ21XZGZ3d4p/view?usp=drive_link",imglog:"프로그램의 전반적인 개발협업 및 버전관를 위한 도구",sourceurl:""})//이미지타이틀
 
 d1.set_fill("서버의 보안성과 각 수행기능별 패턴을 분리하기 위해 Spring WAS 와 사용자 View 기능을 위해 웹브라우져에서 일반적인 작동이 가능한 HTML5 를 구현하며 데이터베이스 연동 대신 파일로 회원목록 저장")//사용자 에필로그
@@ -51,9 +51,11 @@ d2.set_img(0,{imgtitle:"공통모듈구현을 위한 파일생성",imgurl:"https
 d2.set_img(0,{imgtitle:"공통모듈 테스트 할 웹페이지 생성",imgurl:"https://drive.google.com/file/d/1w9_SaZbvfEK4WTHGoJ_pU0bO12u2b1RH/view?usp=drive_link",imglog:"newpage.html파일을 생성하여 함수가 잘 호출되고 작동하는지 테스트해본다.",sourceurl:""})//이미지타이틀
 d2.set_img(0,{imgtitle:"로그인 로그아웃 테스트",imgurl:"https://drive.google.com/file/d/1m_FIUMfgGqyKCCfR28Hz5P-YkTGgT6EH/view?usp=drive_link",imglog:"공통모듈을 사용해 로그인, 로그아웃 동작 확인 ",sourceurl:""})//이미지타이틀
 d2.set_content("테스트케이스를 작성합니다.")
-d2.set_img(1,{imgtitle:"구현한 공통모듈 작동확인",imgurl:"",imglog:"common.js파일을 생성하여 공통모듈(로그아웃,로그인)을 이곳에 구현하였다. 함수만 호출하면 어디에서든 로그인,로그아웃 기능을 사용할 수 있다. ",sourceurl:"https://docs.google.com/document/d/18yo1TRTYfw4Drvh53a1N_uzvgxQvWYf1O2lY5I8hwWc/edit?usp=drive_link"})//이미지타이틀
+d2.set_img(1,{imgtitle:"구현한 공통모듈 작동확인",imgurl:"https://drive.google.com/file/d/1pFW2W3mjGOAJbmiNQalDZebonLfGs0U2/view?usp=drive_link",imglog:"테스트케이스를 작성하여 단위테스트 계획을 세웠다.",sourceurl:"https://docs.google.com/document/d/1DGkhsq0PWBT0L3EaeOfQdWtoE852KS0sYcVuW97ojCQ/edit?usp=drive_link"})//이미지타이틀
 d2.set_content("단위테스트를 작성합니다.")
-d2.set_img(2,{imgtitle:"공통모듈구현하기",imgurl:"",imglog:"common.js파일을 생성하여 공통모듈(로그아웃,로그인)을 이곳에 구현하였다. 함수만 호출하면 어디에서든 로그인,로그아웃 기능을 사용할 수 있다. ",sourceurl:""})//이미지타이틀
+d2.set_img(2,{imgtitle:"junit으로 단위테스트를 실행",imgurl:"https://drive.google.com/file/d/1pozysR29vYTnzpnhmYuEonq3qOB9tFkg/view?usp=drive_link",imglog:"error와 failures가 0이므로 테스트한 모든 메서드가 정상작동을 하고 있다는 걸 알 수 있다.",sourceurl:""})//이미지타이틀
+d2.set_content("테스트결과 보고서를 작성합니다.")
+d2.set_img(3,{imgtitle:"단위테스트 결과를 정리",imgurl:"https://drive.google.com/file/d/1uePgQYXFMUYp-ymvIOamYgwlLYJFXhes/view?usp=drive_link",imglog:"단위테스트 결과서를 작성함으로써 보안점을 한눈에 볼 수 있다 또 문제파악이 수월해졌다.",sourceurl:""})//이미지타이틀
 
 d2.set_fill("사용자와 프로그램간에 인터렉티브한 로그인 세션 설정")//사용자 에필로그
 data_sets.push(d2)
