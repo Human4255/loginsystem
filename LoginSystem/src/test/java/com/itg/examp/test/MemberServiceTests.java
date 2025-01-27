@@ -27,7 +27,7 @@ public class MemberServiceTests {
 		rightpw = new String[] {"123456","214#aa","aa#11aa","a@eegd","44AA@EE"};
 		wrongpw = new String[] {"12345","214#a","#11aa","a@gd","AA@EE"};
 	}
-	//단위테스트 unit test
+	//단위테스트 unit testA
 	@Test
 	public void testId() {
 		boolean res = false;
